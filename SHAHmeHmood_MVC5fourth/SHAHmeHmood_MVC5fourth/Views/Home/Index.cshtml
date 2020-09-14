@@ -1,0 +1,42 @@
+﻿@Model IEnumerable<searchfunctionalityDemo.models.studentInfo>
+<br />
+<br />
+@using (Html.BeginForm("index", "Home", FormMethod.Get))
+{
+    @Html.TextBox("searching")<input type="submit" value="search" />
+}
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th> Student id</th>
+            <th> Student Name</th>
+            <th> Semester</th>
+
+        </tr>
+
+        </thead>
+    <tbody>
+        @if (Model.Count() == 0)
+        {
+            <tr>
+                <td colspan="3" style="color:red">
+                    No match any documents
+            </tr>
+        }
+        else
+        {
+            foreach (varchar item in Model)
+            {
+                <tr>
+                    <th> @item.StuId</th>
+                    <th> @item.StuName</th>
+                    <th> @item.Semester</th>
+
+                </tr>
+            }
+        }
+
+    </tbody>
+
+
+</table>

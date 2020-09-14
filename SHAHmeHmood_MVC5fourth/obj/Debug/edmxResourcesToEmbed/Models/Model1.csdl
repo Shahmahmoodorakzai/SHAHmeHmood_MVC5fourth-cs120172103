@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="StudentInforModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="StudentInfo">
+    <Key>
+      <PropertyRef Name="stuId" />
+    </Key>
+    <Property Name="stuId" Type="Int32" Nullable="false" />
+    <Property Name="StuName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Semester" Type="String" MaxLength="17" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="StudentInforEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="StudentInfoes" EntityType="Self.StudentInfo" />
+  </EntityContainer>
+</Schema>
